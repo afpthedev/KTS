@@ -5,21 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kurban Takip Sistemi</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 <body class="bg-green-50 min-h-screen p-8">
     <div class="max-w-2xl mx-auto">
+        <h1 class="text-3xl font-bold text-center mb-8 text-green-800">Kurban Takip Sistemi</h1>
+        
         <div class="bg-white rounded-lg shadow-md p-6 mb-6">
             <div class="flex justify-between items-center mb-4">
                 {% for asama in kurban_durumu.asamalar %}
                     <div class="flex flex-col items-center">
-                        <div class="w-10 h-10 rounded-full {% if asama.tamamlandi %}bg-green-500{% else %}bg-gray-300{% endif %} flex items-center justify-center text-white">
-                            <i class="fas fa-check"></i>
+                        <div class="w-16 h-16 rounded-full {% if asama.tamamlandi %}bg-green-500{% else %}bg-gray-300{% endif %} flex items-center justify-center text-white">
+                            <i class="fas {{ asama.icon }} text-2xl"></i>
                         </div>
                         <span class="text-xs mt-2 text-center">{{ asama.ad }}</span>
                     </div>
                     {% if not loop.last %}
-                        <div class="flex-grow h-1 bg-green-500"></div>
+                        <div class="flex-grow h-1 {% if asama.tamamlandi %}bg-green-500{% else %}bg-gray-300{% endif %}"></div>
                     {% endif %}
                 {% endfor %}
             </div>
@@ -49,4 +51,4 @@
         </div>
     </div>
 </body>
-</html> 
+</html>
