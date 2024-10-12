@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kurban Takip Sistemi</title>
+    <title>İsar Global - Kurban Takibi</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'isar-yellow': '#FFD700',
+                        'isar-dark-yellow': '#FFB900',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
         .step-icon {
             font-size: 2rem;
@@ -15,60 +27,69 @@
         }
     </style>
 </head>
-<body class="bg-green-50 min-h-screen p-8">
-    <div class="max-w-3xl mx-auto">
-        <h1 class="text-3xl font-bold text-center mb-8 text-green-800">Kurban Takip Sistemi</h1>
+<body class="bg-yellow-50 min-h-screen p-8">
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+        <div class="bg-isar-yellow p-4 flex items-center justify-between">
+            <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center text-isar-yellow font-bold text-xl">
+                <img src="logo.jpg" alt="İsar Global Logo" class="w-24 h-24 object-contain">
+            </div>
+            <h1 class="text-3xl font-bold text-white">Kurban Takibi</h1>
+        </div>
         
-        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-            <div class="flex justify-between items-center mb-8">
-                <div class="flex flex-col items-center w-1/4">
-                    <div class="w-16 h-16 rounded-full bg-green-500 flex items-center justify-center text-white mb-2">
+        <div class="p-6">
+            <div class="flex flex-wrap justify-between items-start mb-8">
+                <div class="flex flex-col items-center w-1/2 md:w-1/4 mb-4">
+                    <div class="w-16 h-16 rounded-full bg-isar-yellow flex items-center justify-center text-white mb-2">
                         <i class="fas fa-sheep step-icon"></i>
                     </div>
-                    <span class="text-xs text-center">Gönderi Alındı</span>
+                    <span class="text-xs text-center font-semibold mb-1">Gönderi Alındı</span>
+                    <p class="text-xs text-center text-gray-600">Kurbanınız teslim alındı.</p>
                 </div>
-                <div class="flex flex-col items-center w-1/4">
-                    <div class="w-16 h-16 rounded-full bg-green-500 flex items-center justify-center text-white mb-2">
+                <div class="flex flex-col items-center w-1/2 md:w-1/4 mb-4">
+                    <div class="w-16 h-16 rounded-full bg-isar-yellow flex items-center justify-center text-white mb-2">
                         <i class="fas fa-hand-scissors step-icon"></i>
                     </div>
-                    <span class="text-xs text-center">Hazırlanıyor</span>
+                    <span class="text-xs text-center font-semibold mb-1">Hazırlanıyor</span>
+                    <p class="text-xs text-center text-gray-600">Kurbanınız kesime hazırlanıyor.</p>
                 </div>
-                <div class="flex flex-col items-center w-1/4">
-                    <div class="w-16 h-16 rounded-full bg-green-500 flex items-center justify-center text-white mb-2">
+                <div class="flex flex-col items-center w-1/2 md:w-1/4 mb-4">
+                    <div class="w-16 h-16 rounded-full bg-isar-yellow flex items-center justify-center text-white mb-2">
                         <i class="fas fa-cut step-icon"></i>
                     </div>
-                    <span class="text-xs text-center">Kesim Yapıldı</span>
+                    <span class="text-xs text-center font-semibold mb-1">Kesim Yapıldı</span>
+                    <p class="text-xs text-center text-gray-600">Kurbanınız kesildi. 2 rekat şükür namazı kılabilirsiniz.</p>
                 </div>
-                <div class="flex flex-col items-center w-1/4">
+                <div class="flex flex-col items-center w-1/2 md:w-1/4 mb-4">
                     <div class="w-16 h-16 rounded-full bg-gray-300 flex items-center justify-center text-white mb-2">
                         <i class="fas fa-truck step-icon"></i>
                     </div>
-                    <span class="text-xs text-center">Teslim Edildi</span>
+                    <span class="text-xs text-center font-semibold mb-1">Teslim Edildi</span>
+                    <p class="text-xs text-center text-gray-600">Video linkiniz: <a href="#" class="text-blue-500">Tıklayınız</a></p>
                 </div>
             </div>
             <div class="w-full bg-gray-200 rounded-full h-2.5">
-                <div class="bg-green-600 h-2.5 rounded-full progress-bar" style="width: 75%"></div>
+                <div class="bg-isar-yellow h-2.5 rounded-full progress-bar" style="width: 75%"></div>
             </div>
         </div>
 
-        <div class="bg-white rounded-lg shadow-md p-6">
-            <h2 class="text-xl font-semibold mb-4">
-                <i class="fas fa-info-circle text-green-600 mr-2"></i>Gönderi Bilgileri
+        <div class="bg-yellow-50 p-6">
+            <h2 class="text-xl font-semibold mb-4 text-isar-dark-yellow">
+                <i class="fas fa-info-circle mr-2"></i>Gönderi Bilgileri
             </h2>
             <div class="mb-4">
-                <h3 class="font-medium mb-2">
-                    <i class="fas fa-user text-green-600 mr-2"></i>Alıcı
+                <h3 class="font-medium mb-2 text-isar-dark-yellow">
+                    <i class="fas fa-user mr-2"></i>Alıcı
                 </h3>
                 <p>ALT KAT BORAN TEL CEVAPSIZ</p>
             </div>
             <div class="mb-4">
-                <h3 class="font-medium mb-2">
-                    <i class="fas fa-map-marker-alt text-green-600 mr-2"></i>Teslimat Adresi
+                <h3 class="font-medium mb-2 text-isar-dark-yellow">
+                    <i class="fas fa-map-marker-alt mr-2"></i>Teslimat Adresi
                 </h3>
                 <p>Örnek Mahallesi, Kurban Sokak No:123, Şehir/İlçe</p>
             </div>
             <div class="text-center mt-6">
-                <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out">
+                <button class="bg-isar-yellow hover:bg-isar-dark-yellow text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out">
                     <i class="fas fa-phone-alt mr-2"></i>İletişime Geç
                 </button>
             </div>
