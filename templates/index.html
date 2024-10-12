@@ -6,24 +6,48 @@
     <title>Kurban Takip Sistemi</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .step-icon {
+            font-size: 2rem;
+        }
+        .progress-bar {
+            transition: width 0.5s ease-in-out;
+        }
+    </style>
 </head>
 <body class="bg-green-50 min-h-screen p-8">
-    <div class="max-w-2xl mx-auto">
+    <div class="max-w-3xl mx-auto">
         <h1 class="text-3xl font-bold text-center mb-8 text-green-800">Kurban Takip Sistemi</h1>
         
         <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-            <div class="flex justify-between items-center mb-4">
-                {% for asama in kurban_durumu.asamalar %}
-                    <div class="flex flex-col items-center">
-                        <div class="w-16 h-16 rounded-full {% if asama.tamamlandi %}bg-green-500{% else %}bg-gray-300{% endif %} flex items-center justify-center text-white">
-                            <i class="fas {{ asama.icon }} text-2xl"></i>
-                        </div>
-                        <span class="text-xs mt-2 text-center">{{ asama.ad }}</span>
+            <div class="flex justify-between items-center mb-8">
+                <div class="flex flex-col items-center w-1/4">
+                    <div class="w-16 h-16 rounded-full bg-green-500 flex items-center justify-center text-white mb-2">
+                        <i class="fas fa-sheep step-icon"></i>
                     </div>
-                    {% if not loop.last %}
-                        <div class="flex-grow h-1 {% if asama.tamamlandi %}bg-green-500{% else %}bg-gray-300{% endif %}"></div>
-                    {% endif %}
-                {% endfor %}
+                    <span class="text-xs text-center">Gönderi Alındı</span>
+                </div>
+                <div class="flex flex-col items-center w-1/4">
+                    <div class="w-16 h-16 rounded-full bg-green-500 flex items-center justify-center text-white mb-2">
+                        <i class="fas fa-hand-scissors step-icon"></i>
+                    </div>
+                    <span class="text-xs text-center">Hazırlanıyor</span>
+                </div>
+                <div class="flex flex-col items-center w-1/4">
+                    <div class="w-16 h-16 rounded-full bg-green-500 flex items-center justify-center text-white mb-2">
+                        <i class="fas fa-cut step-icon"></i>
+                    </div>
+                    <span class="text-xs text-center">Kesim Yapıldı</span>
+                </div>
+                <div class="flex flex-col items-center w-1/4">
+                    <div class="w-16 h-16 rounded-full bg-gray-300 flex items-center justify-center text-white mb-2">
+                        <i class="fas fa-truck step-icon"></i>
+                    </div>
+                    <span class="text-xs text-center">Teslim Edildi</span>
+                </div>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div class="bg-green-600 h-2.5 rounded-full progress-bar" style="width: 75%"></div>
             </div>
         </div>
 
@@ -35,13 +59,13 @@
                 <h3 class="font-medium mb-2">
                     <i class="fas fa-user text-green-600 mr-2"></i>Alıcı
                 </h3>
-                <p>{{ kurban_durumu.alici }}</p>
+                <p>ALT KAT BORAN TEL CEVAPSIZ</p>
             </div>
             <div class="mb-4">
                 <h3 class="font-medium mb-2">
                     <i class="fas fa-map-marker-alt text-green-600 mr-2"></i>Teslimat Adresi
                 </h3>
-                <p>{{ kurban_durumu.adres }}</p>
+                <p>Örnek Mahallesi, Kurban Sokak No:123, Şehir/İlçe</p>
             </div>
             <div class="text-center mt-6">
                 <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out">
