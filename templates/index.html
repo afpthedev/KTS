@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurban Takip Sistemi</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <h1 class="text-2xl font-bold mb-4">Kurban Takip Sistemi</h1>
+        
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <div class="flex justify-between mb-4">
+                {% for asama in kurban_durumu.asamalar %}
+                    <div class="flex flex-col items-center">
+                        <div class="w-10 h-10 rounded-full bg-{{ 'green' if asama.tamamlandi else 'gray' }}-500 flex items-center justify-center text-white">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <span class="text-sm mt-2">{{ asama.ad }}</span>
+                    </div>
+                    {% if not loop.last %}
+                        <div class="flex-grow border-t-2 border-gray-200 mt-5"></div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-xl font-semibold mb-4">Gönderi Bilgileri</h2>
+            <div class="mb-4">
+                <h3 class="font-medium">Alıcı</h3>
+                <p>{{ kurban_durumu.alici }}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
