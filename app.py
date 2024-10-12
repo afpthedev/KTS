@@ -6,13 +6,11 @@ app = Flask(__name__)
 def index():
     kurban_durumu = {
         'asamalar': [
-            {'ad': 'İstek Alındı', 'tamamlandi': True, 'icon': 'clipboard-check'},
-            {'ad': 'Kesime Hazır', 'tamamlandi': True, 'icon': 'tasks'},
-            {'ad': 'Kesildi', 'tamamlandi': False, 'icon': 'cut'},
-            {'ad': 'Teslim Edildi', 'tamamlandi': False, 'icon': 'truck'}
+            {'ad': 'Gönderi Alındı', 'tamamlandi': True},
+            {'ad': 'Transfer Sürecinde', 'tamamlandi': True},
+            {'ad': 'Dağıtıma Çıktı', 'tamamlandi': True},
+            {'ad': 'Teslim Edildi', 'tamamlandi': False}
         ],
-        'tamamlanan': 2,
-        'toplam': 4,
         'alici': 'ALT KAT BORAN TEL CEVAPSIZ',
         'adres': 'Örnek Mahallesi, Kurban Sokak No:123, Şehir/İlçe'
     }
